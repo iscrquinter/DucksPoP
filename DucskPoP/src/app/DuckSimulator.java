@@ -2,6 +2,7 @@ package app;
 
 import ducks.MallardDuck;
 import ducks.*;
+import gooses.*;
 
 public class DuckSimulator {
 	public static void main(String[] args) {
@@ -14,13 +15,15 @@ public class DuckSimulator {
 		Quackable redheadDuck = new RedheadDuck();
 		Quackable duckCall = new DuckCall();
 		Quackable rubberDuck = new RubberDuck();
+		Quackable gooseDuck = new GooseAdapter(new Goose());
  
-		System.out.println("\nDuck Simulator");
+		System.out.println("\nDuck Simulator : with Goose Adapter");
  
 		simulate(mallardDuck);
 		simulate(redheadDuck);
 		simulate(duckCall);
 		simulate(rubberDuck);
+		simulate(gooseDuck);
 	}
  
 	void simulate(Quackable duck) {
